@@ -1,12 +1,17 @@
 <html>
-	<head>
-		<script src="evil.js"></script>
-	</head>
 	<!-- <body onload="javascript:document.forms[0].submit()"> -->
 	<body>
 		Evil
-		<form method="POST" name="form0" action="http://localhost:3334/password-update2">
-				<input type="hidden" name="pw" value="hackedPw2"/>
+		<textarea id='log-in-text'></textarea><button id='log-in'>Log In</button>
+		<textarea id='update-password-text'></textarea><button id='update-password'>Update Password</button>
+		<form method="POST" name="form0" action="http://localhost:3334/log-in">
+			<input name="pw" value=""/>
 		</form>
+		<button id='log-in-form'>Log In (Form)</button>
+		<form method="POST" name="form1" action="http://localhost:3334/update-password">
+			<input name="pw" value=""/>
+		</form>
+		<button id='update-password-form'>Update Password (Form)</button>
+		<script src="evil.js"></script>
 	</body>
 </html>

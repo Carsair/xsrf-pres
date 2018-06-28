@@ -1,22 +1,8 @@
 console.log("Evil Code Executing");
 
-var get = () => {
-	var GET_URL = 'http://localhost:3334/test.html';
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = () => {
-		if (xhttp.readyState == 4) {
-			console.log("status: ", xhttp.status);
-			console.log('GET xhttp.responseText: ', xhttp.responseText);
-		}
-	};
-	xhttp.open("GET", GET_URL, true);
-	xhttp.send();
-};
-
-var post = () => {
-	var POST_URL = 'http://localhost:3334/password-update';
+var post = (url, data) => {
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", POST_URL, true);
+	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xhr.onreadystatechange = function() {//Call a function when the state changes.
 			if(this.readyState == XMLHttpRequest.DONE) {
@@ -24,8 +10,28 @@ var post = () => {
 				console.log('POST xhr.responseText: ', xhr.responseText);
 			}
 	}
-	xhr.send("pw=hackedPw");
+	xhr.send(data);
 }
 
-// get();
-// post();
+var logInButton = document.getElementById('log-in');
+var updatePwButton = document.getElementById('update-password');
+var logInFormButton = document.getElementById('log-in-form');
+var updatePwFormButton = document.getElementById('update-password-form');
+
+logInButton.addEventListener('click', () => {
+	var logInText = document.getElementById('log-in-text').value;
+	post('http://localhost:3334/log-in', `pw=${logInText}`);
+});
+
+updatePwButton.addEventListener('click', () => {
+	var updatePwText = document.getElementById('update-password-text').value;
+	post('http://localhost:3334/update-password', `pw=${updatePwText}`);
+});
+
+updatePwFormButton.addEventListener('click', () => {
+	document.forms[1].submit();
+});
+
+logInFormButton.addEventListener('click', () => {
+	document.forms[0].submit();
+});
