@@ -1,6 +1,6 @@
 console.log("Safe Code Executing");
 
-document.cookie = 'id=12345'
+document.cookie = 'logged_in=true'
 console.log('document.cookie: ', document.cookie);
 
 var post = () => {

@@ -14,6 +14,7 @@ Notes:
 * https://stackoverflow.com/questions/11423682/cross-domain-form-posting
 * https://www.exploit-db.com/exploits/18791/
 * https://stackoverflow.com/questions/5710358/how-to-retrieve-post-query-parameters
+* https://stackoverflow.com/questions/44816519/how-to-get-cookie-value-in-expressjs
 *
 
 
