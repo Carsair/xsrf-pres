@@ -26,33 +26,3 @@ Notes:
 * https://github.com/DDCSLearning/authenticationIntro
 * https://jwt.io/introduction/
 * https://www.owasp.org/index.php/HttpOnly
-
-
-
-Origin is a combination of URI scheme, host name, and port number.
-Browser sends cookie data automatically with requests to the same origin.
-Same-origin policy is a security feature implemented by the browser and the Javascript it runs.
-	Creates a trusted context for scripts allowing them to access same-origin cookie data and response data.
-Cross-origin resource sharing (CORS) is a security setting implemented by browsers and web servers.
-	Provides origin header and preflight request so server can choose to allow the request.
-	Actually relaxes the same-origin policy for certain domains
-
-
-For XSS, the exploit breaks SOP because the site allows the attacker to modify the site html into including their script.  This gives the script same origin permission.
-For XSRF, the exploit uses SOP because normally cookies send would be only for the site the user is on, but the browser sends the cookies for the request.  If you don't also check the request referrer or xsrf token, then you are vulnerable.
-
-the most dangerous CSRF vulnerability ranks as the 909th most dangerous software bug ever found.
-Cross-site scripting (XSS) vulnerabilities (even in other applications running on the same domain) allow attackers to bypass essentially all CSRF preventions.
-http-only cookie
-JSONP
-same site tough cookies  https://scotthelme.co.uk/csrf-is-dead/
-hacked browser? not going to have the cookies needed, this is specific to a logged-in host's browser (albeit possibly with extensions)
-"Once you have verified that the request appears to be a same origin request so far, we recommend a second check as an additional precaution to really make sure." !?!?
-In some cases, a XSRF request will be blocked by CORS preflight, but that does not mean a request cannot be made to actually hit the endpoint.  CORS is not security.
-
-
-GET
-* image/script tag
-POST
-* little harder, construct a form
-Add 127.0.0.1 local.evil.com to etc/hosts
