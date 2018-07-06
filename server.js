@@ -6,6 +6,10 @@ var path = require('path');
 var password = '12345';
 var loggedIn = false;
 
+var isTrusted = (headers) => {
+	return (headers.referer || '').indexOf('localhost') >= 0 && (headers.origin || '').indexOf('localhost') >= 0;
+}
+
 // app.use(cors())
 app.use(express.urlencoded());
 app.use(cookieParser());
@@ -26,7 +30,7 @@ app.use(function (req, res, next) {
 app.use(express.static('dist'));
 
 app.post('/log-in', function (req, res, next) {
-	if (req.body.pw === password) {
+	if (req.body.pw === password && isTrusted(req.headers)) {
 		loggedIn = '56789';
 		res.cookie('logged_in', loggedIn, { maxAge: 10000 });
 		console.log("successful log in");
@@ -38,7 +42,7 @@ app.post('/log-in', function (req, res, next) {
 });
 
 app.post('/update-password', function (req, res, next) {
-	if (req.cookies.logged_in === loggedIn) {
+	if (req.cookies.logged_in === loggedIn && isTrusted(req.headers)) {
 		password = req.body.pw;
 		console.log("successful update PW");
 		res.send(`PASSWORD UPDATED: ${password}, ${loggedIn}`);

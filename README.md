@@ -16,7 +16,14 @@ Notes:
 * https://stackoverflow.com/questions/5710358/how-to-retrieve-post-query-parameters
 * https://stackoverflow.com/questions/44816519/how-to-get-cookie-value-in-expressjs
 * https://expressjs.com/en/advanced/best-practice-security.html#use-cookies-securely
-*
+* https://security.stackexchange.com/questions/158045/is-checking-the-referer-and-origin-headers-enough-to-prevent-csrf-provided-that
+* https://stackoverflow.com/questions/13147693/how-to-extract-request-http-headers-from-a-request-using-nodejs-connect
+* https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/setRequestHeader
+* https://stackoverflow.com/questions/3076414/ways-to-circumvent-the-same-origin-policy
+* https://github.com/tymondesigns/jwt-auth
+* https://www.npmjs.com/package/express-session
+* https://medium.com/of-all-things-tech-progress/starting-with-authentication-a-tutorial-with-node-js-and-mongodb-25d524ca0359
+* https://github.com/DDCSLearning/authenticationIntro
 
 
 Origin is a combination of URI scheme, host name, and port number.
