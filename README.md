@@ -24,6 +24,9 @@ Notes:
 * https://www.npmjs.com/package/express-session
 * https://medium.com/of-all-things-tech-progress/starting-with-authentication-a-tutorial-with-node-js-and-mongodb-25d524ca0359
 * https://github.com/DDCSLearning/authenticationIntro
+* https://jwt.io/introduction/
+* https://www.owasp.org/index.php/HttpOnly
+
 
 
 Origin is a combination of URI scheme, host name, and port number.
@@ -52,3 +55,4 @@ GET
 * image/script tag
 POST
 * little harder, construct a form
+Add 127.0.0.1 local.evil.com to etc/hosts

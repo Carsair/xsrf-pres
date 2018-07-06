@@ -1,6 +1,5 @@
 var express = require('express');
 var cookieParser = require('cookie-parser');
-// var cors = require('cors');
 var app = express();
 var path = require('path');
 var password = '12345';
@@ -10,7 +9,6 @@ var isTrusted = (headers) => {
 	return (headers.referer || '').indexOf('localhost') >= 0 && (headers.origin || '').indexOf('localhost') >= 0;
 }
 
-// app.use(cors())
 app.use(express.urlencoded());
 app.use(cookieParser());
 

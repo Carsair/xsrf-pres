@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const path = require('path');
 
 // Serve views and assets.
 app.use(express.static('evil-dist'));
