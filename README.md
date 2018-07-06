@@ -1,3 +1,11 @@
+
+![logging-in-safe](examples/logging-in-safe.gif?raw=true)
+![csrf-with-password](examples/csrf-with-password.gif?raw=true)
+![csrf-without-pw](examples/csrf-without-pw.gif?raw=true)
+![csrf-prevented](examples/csrf-prevented.gif?raw=true)
+![cors-not-security](examples/cors-not-security.gif?raw=true)
+
+
 Notes:
 * https://en.wikipedia.org/wiki/Same-origin_policy
 * https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
